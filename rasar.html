@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פנקס כיס</title>
+    <!-- Include Font Awesome stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .rectangle-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+.custom-rectangle {
+    width: 40%; /* Adjust the percentage as needed */
+    height: 25%; /* Set the height as a percentage of the viewport width */
+    box-sizing: border-box;
+    background: white;
+    color: #333;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens if needed */
+    .custom-rectangle {
+        width: 80%; /* Adjust for smaller screens */
+        height: 30vw; /* Set the height as a percentage of the viewport width */
+    }
+}
+
+
+        .custom-rectangle:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Change the box-shadow on hover */
+        }
+.circle-background {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Assign different colors to each rectangle's circle */
+.custom-rectangle:nth-child(1) .circle-background {
+    background: linear-gradient(to top left, #33d7f4, #1365d1);
+}
+
+.custom-rectangle:nth-child(2) .circle-background {
+    background: linear-gradient(to top left, #7af1b0, #1f7c3b);
+}
+
+.custom-rectangle:nth-child(3) .circle-background {
+    background: linear-gradient(to top left, #bc94eb, #623b90);
+}
+
+.custom-rectangle:nth-child(4) .circle-background {
+    background: linear-gradient(to top left, #ffa3f9, #bb2faf);
+}
+
+.custom-rectangle:nth-child(5) .circle-background {
+    background: linear-gradient(to top left, #f9f314, #c7b50c);
+}
+
+.custom-rectangle:nth-child(6) .circle-background {
+    background: linear-gradient(to top left, #e20c33, #ac071a);
+}
+
+.circle-background i {
+    font-size: 35px;
+    color: white;
+}
+
+.custom-rectangle:hover .circle-background {
+    transform: scale(1.1);
+}
+
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1 onclick="navigateTo(window.location.pathname)">פנקס כיס</h1>
+</header>
+
+<div class="rectangle-container">
+    <div class="custom-rectangle" onclick="navigateTo('basisService.html')">
+        <div class="circle-background">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <h2>שירותי הבסיס</h2>
+    </div>
+
+    <div class="custom-rectangle" onclick="navigateTo('around.html')">
+        <div class="circle-background">
+            <i class="fas fa-tree"></i>
+        </div>
+        <h2>סביבה</h2>
+    </div>
+
+    <div class="custom-rectangle" onclick="navigateTo('highlights.html')">
+        <div class="circle-background">
+            <i class="fas fa-bullseye"></i> <!-- Change the icon class here -->
+        </div>
+        <h2>דגשים</h2>
+    </div>
+
+    <div class="custom-rectangle" onclick="navigateTo('discipline.html')">
+        <div class="circle-background">
+            <i class="fas fa-gavel"></i>
+        </div>
+        <h2>משמעת</h2>
+    </div>
+
+    <div class="custom-rectangle" onclick="navigateTo('idfSpirit.html')">
+        <div class="circle-background">
+            <i class="fas fa-book"></i>
+        </div>
+        <h2>רוח צהל</h2>
+    </div>
+
+    <div class="custom-rectangle" onclick="window.location.href = 'basis.html'">
+        <div class="circle-background">
+            <i class="fas fa-building"></i>
+        </div>
+        <h2>על הבסיס</h2>
+    </div>
+
+</div>
+
+<script>
+        function navigateTo(page) {
+            // Implement your navigation logic here
+            alert("Navigate to " + page);
+        }
+    </script>
+
+</body>
+
+</html>
