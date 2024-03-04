@@ -7,14 +7,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
   <style>
-          header {
-            background-color: #2196F3;
-            color: white;
-            text-align: center;
-            padding: 15px;
-              direction: rtl; /* Add this line to set the text direction to right-to-left */
+header {
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  direction: rtl;
+  display: flex;
+  align-items: center;
+  margin: 0;
+            padding: 36px;
 
-        }
+
+}
+h1 {
+  margin: 0 auto; /* Center the h1 element horizontally */
+}
+
+
+
+.back-arrow {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+
+
+
     body {
             background-color: #f5f5f5;
         font-family: 'Arial', sans-serif;
@@ -51,15 +73,36 @@
             padding: 10px;
 
     }
+title2 {
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+  direction: rtl;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add this line for spacing below the title */
+  display: block; /* Ensure it's treated as a block element to apply margins */
+}
+
+
+
   </style>
 </head>
 <body>
 <header>
+  <div class="back-arrow" onclick="goBack()">
+    &#9664; <!-- Unicode for left-pointing arrow -->
+  </div>
   <h1 onclick="window.location.href = 'index.html';">על הבסיס</h1>
 </header>
 
 <!-- CustomSelectionWidget -->
-
+<title2> על הבסיס </title2>
+<p style="margin-bottom: 80px;">
 <div class="container" onclick="toggleExpansion(this)">
   <div class="title">
     <span class="arrow">&#9660;</span>
@@ -83,6 +126,10 @@
 
 <!-- JavaScript to toggle content visibility -->
 <script>
+  function goBack() {
+    window.history.back();
+  }
+
   function toggleExpansion(element) {
     const content = element.querySelector('.content');
     content.style.display = content.style.display === 'none' ? 'block' : 'none';
