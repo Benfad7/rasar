@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סביבה</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+header {
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  direction: rtl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+h1 {
+  margin-left: 20px; /* Add this line for left margin */
+  flex-grow: 1; /* Add this line to make h1 take up remaining space */
+}
+
+.back-arrow {
+  color: white;
+  font-size: 24px;
+
+  cursor: pointer;
+  /* order: -1; */ /* Remove this line to keep default order */
+}
+
+
+
+
+
+
+
+    body {
+            background-color: #f5f5f5;
+        font-family: 'Arial', sans-serif;
+        margin: 0; /* Add this line to remove default margin */
+        padding: 0;
+    }
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 4px rgba(191, 191, 191, 1.0);
+      margin: 30px 20px;
+      padding: 10px;
+    }
+.title {
+  color: #ffc107;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: right;
+  display: flex;
+  justify-content: space-between; /* Add this line to align content to both ends */
+  padding-right: 10px; /* Add some right padding for better spacing */
+}
+
+.arrow {
+  color: #ffc107;
+}
+
+    .content {
+      color: #000;
+      font-size: 12px;
+      font-weight: normal;
+      text-align: right;
+      direction: rtl;
+            padding: 10px;
+
+    }
+title2 {
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+  direction: rtl;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add this line for spacing below the title */
+  display: block; /* Ensure it's treated as a block element to apply margins */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="back-arrow" onclick="goBack()">
+        &#9664; <!-- Unicode for left-pointing arrow -->
+    </div>
+    <h1 onclick="window.location.href = 'index.html';">סביבה</h1>
+</header>
+
+<!-- CustomSelectionWidget -->
+<title2> מה בסביבה</title2>
+<p style="margin-bottom: 80px;">
+<div class="container" onclick="toggleExpansion(this)">
+    <div class="title">
+        <span class="arrow">&#9660;</span>
+        נווה יעקב
+    </div>
+    <div class="content" style="display: none;">
+        שכונה בירושלים
+        <br>
+        שכונה ע"ש הרב ריינס. נוסדה בשנת 1924 ונהרסה במהלך מלחמת העצמאות. נבנתה מחדש בשנת 1972.
+
+    </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+    <div class="title">
+        <span class="arrow">&#9660;</span>
+        שועפאט
+    </div>
+    <div class="content" style="display: none;">
+        שכונה בירושלים
+        <br>
+        כפר ערבי בגבולה הצפוני של ירושלים. במלחמת ששת הימים נכבש הכפר ע"י חטיבת הראל. כיום נמצא בתחומי ישראל, אך תושביו
+        ערבים ישראלים או פלסטינים.
+
+    </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+    <div class="title">
+        <span class="arrow">&#9660;</span>
+        נבי סמואל
+    </div>
+    <div class="content" style="display: none;">
+        קבר שמואל הנביא<br>
+        ע"פ המסורת- מקום קבורתו של שמואל. אתר מקודש בתוך כפר ערבי נטוש. מעל הקבר נבנתה כנסייה. במאה ה-15 הפכה הכנסייה
+        לבית כנסת ולאחר מאבק ארוך הפכה למסגד בידי המוסלמים. במלחמת העצמאות שימש משלט ירדני חשוב. נכבש לאחר מאבקים רבים,
+        רק במלחמת ששת הימים.
+    </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+    <div class="title">
+        <span class="arrow">&#9660;</span>
+        רמאללה
+    </div>
+    <div class="content" style="display: none;">
+        עיר ערבית גדולה ששוכנת כ-13 ק"מ צפונית לירושלים. באזור קיים צומת חשוב מהשפלה והבקעה אל במת ההר.
+
+    </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+    <div class="title">
+        <span class="arrow">&#9660;</span>
+        עטרות
+    </div>
+    <div class="content" style="display: none;">
+        שכונה בירושלים<br>
+        נמל תעופה שנבנה על ידי הבריטים ומשמש כנמל התעופה של ירושלים. במקום ישוב הנקרא עטרות שנוסד ב-1914, ננטש וחודש בשנת 1922.
+    </div>
+</div>
+<!-- JavaScript to toggle content visibility -->
+<script>
+  function goBack() {
+    window.history.back();
+  }
+
+  function toggleExpansion(element) {
+    const content = element.querySelector('.content');
+    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    const arrow = element.querySelector('.arrow');
+    arrow.innerHTML = content.style.display === 'none' ? '&#9660;' : '&#9650;';
+  }
+
+</script>
+
+</body>
+</html>
