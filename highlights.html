@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שירותי הבסיס</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <style>
+header {
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  direction: rtl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+h1 {
+  margin-left: 20px; /* Add this line for left margin */
+  flex-grow: 1; /* Add this line to make h1 take up remaining space */
+}
+
+.back-arrow {
+  color: white;
+  font-size: 24px;
+
+  cursor: pointer;
+  /* order: -1; */ /* Remove this line to keep default order */
+}
+
+
+
+
+
+
+
+    body {
+            background-color: #f5f5f5;
+        font-family: 'Arial', sans-serif;
+        margin: 0; /* Add this line to remove default margin */
+        padding: 0;
+    }
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 4px rgba(191, 191, 191, 1.0);
+      margin: 15px 20px;
+      padding: 10px;
+    }
+.title {
+  color: #ffc107;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: right;
+  display: flex;
+  justify-content: space-between; /* Add this line to align content to both ends */
+  padding-right: 10px; /* Add some right padding for better spacing */
+}
+
+.arrow {
+  color: #ffc107;
+}
+
+    .content {
+      color: #000;
+      font-size: 12px;
+      font-weight: normal;
+      text-align: right;
+      direction: rtl;
+        padding-right: 14px;
+                padding-left: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+
+    }
+title2 {
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+  direction: rtl;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add this line for spacing below the title */
+  display: block; /* Ensure it's treated as a block element to apply margins */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<header>
+  <div class="back-arrow" onclick="goBack()">
+    &#9664; <!-- Unicode for left-pointing arrow -->
+  </div>
+  <h1 onclick="window.location.href = 'index.html';">שירותי הבסיס</h1>
+</header>
+
+<!-- CustomSelectionWidget -->
+<title2>הופעה ולבוש</title2>
+<p style="margin-bottom: 80px;">
+  <title2>תספורת וגילוח</title2>
+<p style="margin-bottom: 80px;">
+
+  <title2>הנחיות למהלך הסופ"ש בפיקוד</title2>
+<p style="margin-bottom: 80px;">
+
+  <title2>דגשים נוספים</title2>
+<p style="margin-bottom: 80px;">
+
+  <title2>נהלי אבטחה</title2>
+<p style="margin-bottom: 80px;">
+
+
+
+
+
+
+  <!-- JavaScript to toggle content visibility -->
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+
+  function toggleExpansion(element) {
+    const content = element.querySelector('.content');
+    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    const arrow = element.querySelector('.arrow');
+    arrow.innerHTML = content.style.display === 'none' ? '&#9660;' : '&#9650;';
+  }
+
+</script>
+
+</body>
+</html>
