@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שירותי הבסיס</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <style>
+header {
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  direction: rtl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+h1 {
+  margin-left: 20px; /* Add this line for left margin */
+  flex-grow: 1; /* Add this line to make h1 take up remaining space */
+}
+
+.back-arrow {
+  color: white;
+  font-size: 24px;
+
+  cursor: pointer;
+  /* order: -1; */ /* Remove this line to keep default order */
+}
+
+
+
+
+
+
+
+    body {
+            background-color: #f5f5f5;
+        font-family: 'Arial', sans-serif;
+        margin: 0; /* Add this line to remove default margin */
+        padding: 0;
+    }
+    .container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 4px rgba(191, 191, 191, 1.0);
+      margin: 15px 20px;
+      padding: 10px;
+    }
+.title {
+  color: #ffc107;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: right;
+  display: flex;
+  justify-content: space-between; /* Add this line to align content to both ends */
+  padding-right: 10px; /* Add some right padding for better spacing */
+}
+
+.arrow {
+  color: #ffc107;
+}
+
+    .content {
+      color: #000;
+      font-size: 12px;
+      font-weight: normal;
+      text-align: right;
+      direction: rtl;
+        padding-right: 14px;
+                padding-left: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+
+    }
+title2 {
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+  direction: rtl;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Add this line for spacing below the title */
+  display: block; /* Ensure it's treated as a block element to apply margins */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<header>
+  <div class="back-arrow" onclick="goBack()">
+    &#9664; <!-- Unicode for left-pointing arrow -->
+  </div>
+  <h1 onclick="window.location.href = 'index.html';">שירותי הבסיס</h1>
+</header>
+
+<!-- CustomSelectionWidget -->
+<title2>זמני פתיחה/סגירת מוסדות</title2>
+<p style="margin-bottom: 80px;">
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חד"א (דרר אוכל)
+  </div>
+  <div class="content" style="display: none;">
+    ארוחת בוקר - 07:00-08:00<br>
+    ארוחת צהריים - 12:00-13:00<br>
+    ארוחת ערב - 18:00-19:00<br>
+    חמגשיות – חל איסור מוחלט על הוצאת חמגשיות מחדר האוכל חמגשיות לשומרים בלבד, חלוקה תתבצע ע"י סמל תורן.<br>
+    משיכת מזון תתקיים בימי שני וחמישי בין השעות 14:00-16:00 עם ציידנית בלבד!
+  </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    כוורת
+  </div>
+  <div class="content" style="display: none;">
+    ימים א' עד ה'<br>
+    שעות פעילות 08:00-20:00<br>
+    אחת לרבעון הכוורת תיסגר לטובת ספירת מלאי.<br>
+    כניסה לשק"ם מותרת רק בשעות הפעילות המקובלות.<br>
+    אין כניסה לשק"ם בהופעה מרושלת בפקודה!
+
+  </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    מספרה
+  </div>
+  <div class="content" style="display: none;">
+    08:00-12:00<br>
+    הפסקה-12:00-13:00<br>
+    13:00-16:00<br>
+    יש להגיע למספרה בהופעה צבאית מלאה.<br>
+    יש לחתום בטופס טבלת מעקב תספורות בסיום התספורת.
+  </div>
+</div>
+<title2>זמני פתיחה/סגירת מוסדות</title2>
+<p style="margin-bottom: 80px;">
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    שעות פתיחה
+  </div>
+  <div class="content" style="display: none;">
+    ימים א – ה 08:00-16:45.
+  </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    שחרור חייל/ת/מפקד מהפיקוד
+  </div>
+  <div class="content" style="display: none;">
+    טופס טיולים הצבה - על המשרת להזדכות על כל הציוד שעליו הוא חתום.<br>
+    טופס טיולים סיפוח לנגד/ קצין: טופס טיולים יוצא עד שבועיים יחדש הנגד את חתימתו על הציוד האישי. ומעל שבועיים על הנגד להזדכות על כל הציוד.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    כביסה
+  </div>
+  <div class="content" style="display: none;">
+    הנך רשאי למסור את מדיך, ופרטי לבושך האישיים לכביסה בימי א'-ב'.<br>
+    אפשר לשלוח גם מדי א' ומדי ב' כאשר מדי א' מתקבלים לאחר גיהוץ.<br>
+    ימי שליחת כביסה למכבסה: יום ג'.<br>
+    ימי הפקדת כביסה: א'-ה' בשעות הפעילות.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    החלפת נעליים
+  </div>
+  <div class="content" style="display: none;">
+    לחיילי חובה בלבד - באפשרותך להחליף את נעליך לנעלים חדשות, והן יוחזרו לאחר 21 יום לכל היותר. (הזכאות אחת לחצי שנה).
+  </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חידוש חתימות
+  </div>
+  <div class="content" style="display: none;">
+    זהו תהליך שבו החייל חותם מחדש על הציוד שנמצא ברשותו, לכן חייל/נגד/קצין שעליו לחדש חתימה חובה עליו להתייצב באפסנאות לחדש חתימה בכל חצי שנה או להזדכות על הציוד.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    יציאה לחופשת שחרור
+  </div>
+  <div class="content" style="display: none;">
+    חייל היוצא לחפש"ש רצוי שיזדכה על ציוד האפסניה לפני יציאתו (מלבד ציוד א').
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    ניפוק ציוד קליר/קרביץ לאגפים
+  </div>
+  <div class="content" style="display: none;">
+    ניפוק ציוד זה יתבצע למול ק. הניהול של האגף, לאחר שליחת הזמנה מפורטת עפ"י הקובץ. ינופק ציוד אך ורק לקציני הניהול לאחר ההזמנה ואישור מפקדת האפסנאות במייל. קבלת הציוד מותנה עפ"י תקציב האגף.
+  </div>
+</div>
+<title2>נשקיים</title2>
+<p style="margin-bottom: 80px;">
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    נשקייה
+  </div>
+  <div class="content" style="display: none;">
+    שעות פתיחה: 08:30-15:30<br>
+    שעות קבלה/החזרה של נשק משמירות עד השעה 10:00.<br>
+    המשרת יעבור מבחן בטיחות בנשק, לאחר מכן יגיע לנשקייה עם האישור חתום ע"י סא"ל/אל"ם עד 24 שעות.<br>
+    חתימה על נשק למעל 24 שעות באישור אל"ם.<br>
+    חתימה על נשק קבע באישור אל"ם+רמ"ט.<br>
+    המשרת חותם על נשק, רצועה, מחסנית וכדורים.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    איפסון /שמירת נשק
+  </div>
+  <div class="content" style="display: none;">
+    אין אפסון נשקים בנשקייה.<br>
+    כאשר יוצא לקורס בעת סיפוח על המשרת להזדכות על הנשק.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    זיכוי נשק
+  </div>
+  <div class="content" style="display: none;">
+    המשרת יגיע לנשקייה עם כל הציוד שעליו חתם:<br>
+    נשק, רצועה, מחסניות וכדורים.<br>
+    חייל/קצין/נגד שיחסר לו ציוד המלווה על הנשק לא יכול להזדכות על הנשק עד להשלמת החוסרים.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    נשק לשמירה
+  </div>
+  <div class="content" style="display: none;">
+    ניפוק והחזרת נשקים משמירה עד השעה 10:00.<br>
+    אם באותו היום הוחלפו שומרים בניהם יש להגיע לנשקייה שני החיילים עם הנשק לביצוע החלפת חתימה (החייל החותם צריך אישורים כנדרש).
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    העברת נשקים
+  </div>
+  <div class="content" style="display: none;">
+    חל איסור מוחלט להעברת נשקים ללא אישור אחראי נשקייה!
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חובת בדיקת נשק
+  </div>
+  <div class="content" style="display: none;">
+    בעת קבלת נשק או בעת העברתו.<br>
+    באימונים:<br>
+    • בהגיע היחידה לשטח/למטווח.<br>
+    • לפני כל מקצה ירי/תרגיל.<br>
+    • לאחר כל מקצה ירי/תרגיל.<br>
+    • לפי צאת היחידה את השטח.<br>
+    בשמירה:<br>
+    לפני עליית משמר ולפני ירידת משמר-במסדר.<br>
+    במשימת אבטחה:<br>
+    בעליית משמר ובירידתו באמצעות קצין תורן ובהחלפת משמרות ע\"י בעל תפקיד.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    יציאה עם נשק הביתה
+  </div>
+  <div class="content" style="display: none;">
+    ככלל אין יציאה עם נשק הביתה!<br>
+    יציאה הביתה עם נשק באישור ק.מטה (אל"ם) בלבד!<br>
+    יש לאבטחו אחרי שני מנעולים ולהפריד את המכלול והמחסנית מהנשק ולאחסנם בנפרד.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    נשיאת נשק
+  </div>
+  <div class="content" style="display: none;">
+    ✔לעולם אין לכוון נשק אל אדם, רכב, רק"מ, ומבנה סגור בין אם "טעון" ובין עם "פרוק".<br>
+    ✔אין להחליף חלקים בין כלי נשק, גם אם החלקים זהים ומאותו סוג נשק.<br>
+    ✔אין להישען על כלי נשק בכלל ועל קדח הקנה בפרט.<br>
+    ✔כלי הנשק יהיה תמיד במצב "פרוק" ו"נצור", פרט לנסיבות בהן תינתן הוראה אחרת מהמפקד האחראי או הפיקוד המרחבי.<br>
+    ✔בבדיקת נשק יופנה הקנה כלפי מעל בזויות של 90 מעלות.<br>
+    ✔אימונים ללא אש יבוצעו תמיד כאשר הנשק במצב "פרוק" ו"נצור".<br>
+    ✔טעינת כלי נשק תעשה בסמוך לירי ועפ"י פקודה מפורשת של המפקד האחראי.<br>
+    ✔את הנשק יש לאחוז כאשר 5 אצבעות לופתות את ידית האחיזה- אין לשים אצבע על שמורת על ההדק.<br>
+    ✔ההתייחסות לנשק תהיה תמיד כאילו הנשק עם כדור בקנה.<br>
+    ✔בעת שמירות במחנה פתיחה באש תתבצע אך ורק ע"פ הוראות פתיחה באש של מפקד תורן ממפקדת הפיקוד.
+  </div>
+</div>
+
+    <title2>משאבי אנוש</title2>
+<p style="margin-bottom: 80px;">
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    טופס טיולים
+  </div>
+  <div class="content" style="display: none;">
+    להלן תהליך קליטת חייל חדש בפיקוד בליווי חונך ותיק מהאגף:<br><br>
+    1. התייצבות בשלישות לטובת קליטה וקבלת טופס טיולים. (הגשת צו הצבה/סיפוח, מעבר ראיון שלישה, ביצוע לומדות באיזור האישי באתר צה"ל).<br><br>
+    2. אפסנאות- חתימה על הציוד הדרוש לך בעת שרותך בפיקוד .<br><br>
+    3. רס"ר מחנה-תדריך סמים ואלכוהול, תדריך הופעה ולבוש, נהלים ופקודות על כל השגרה בפיקוד.<br><br>
+    4. מוסדות המחנה- סיור הכרות במתקנים חיוניים בפיקוד כמו: חדר אוכל, שק"ם, מספרה, חדר כושר, בית כנסת, משרדי הפיקוד, מגורים ועוד – יבוצע במסגרת ט"ט עם נציג מהאגף.<br><br>
+    5. ראיון קליטה מפקד- מעבר ראיון אצל מפקדך הישיר+מפקד האגף.<br><br>
+    6. שאר התחנות יעבור המשרת בהתאם לראיון השלישה.<br><br>
+    7. שימו לב-ע"פ פקודה ליווי נקלט חדש בטופס טיולים נדרש להיות בצמוד למשרת בותק של 3 חודשים, לאחר מכן חפיפה של כשבועיים.<br><br>
+    החזרת טופס טיולים לשלישות תוך 48 שעות וחבירה לאגף.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    שינוי שיבוץ
+  </div>
+  <div class="content" style="display: none;">
+    חייל הרוצה לעבור יחידה מהסיבות: התנדבות ליחידה קרבית, יציאה לקורס,<br><br>
+    או בעיה אישית מיוחדת אחרת יוכל להגיש בקשה לשינוי שיבוץ (טופס 55).<br><br>
+    הבקשה תועבר בהמלצת מפקדים וכן בהמלצת רמת"ג היחידה כאשר<br><br>
+    הסמכות המחליטה הינה הבקו"ם.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    דוח 1 (נוכחות)
+  </div>
+  <div class="content" style="display: none;">
+    דוח 1 יש לבצע באפליקציית הדוח 1.<br>ראשית יש להתחבר לאפליקציית 'אתר צה"ל' ושם לאיזור האישי – לאחר מכן התחברות לאפליקציית הדוח 1.<br>חובת דיווח הפרט עד השעה 09:30 – אישור המפקד עד השעה 10:00.<br>יש לשים דגש על אמינות הדיווח.<br>בכל יום תעבור השלישה על דוח 1 לוודא דיווחים.<br>ניתן לעבור תדריך הזנת דוח 1 ע"י מש"קי המשא"ן.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חופשות
+  </div>
+  <div class="content" style="display: none;">
+    כל חייל/קצין בחובה זכאי ל-18 ימי חופשה בכל שנה קלנדרית (בתאריך שחרור/גיוס).<br>לא ניתן לצבור ימי חופשה לשנת העבודה הבאה למשרתים בחובה ברמ"פ ד'.<br>אנשי קבע – זכאות ע"פ וותק בקבע. זכאות מקסימלית 25 ימי חופשה. זכאות לצבירה משנה קודמת באישור אל"ם עד 8 ימים בהתאם למשך שירות תקין בשנת העבודה.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חו"ל
+  </div>
+  <div class="content" style="display: none;">
+    לאור התפשטות נגיף הקורונה, פקודות היתרי יציאה לחו"ל משתנות ועל כן יש לברר הנחיות מדוייקות מול המשא"ן. ככלל, טפסי חו"ל יש להגיש באיזור האישי באתר צה"ל, מפקד בדרגת רס"ן יידרש לאשר במערכת ה-ERP.<br><br>בקשות חו"ל במיוחדת<br>הגשה מול משרד הת"ש בצירוף אישורים+טופס חו"ל תקין.<br><br>בקשות חו"ל לעובדי משמרות<br>טופס חו"ל תקין – יציאה על שבוע החופש בלבד.
+  </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    שחרורים
+  </div>
+  <div class="content" style="display: none;">
+    משרת אשר משתחרר נדרש לזכות את כלל הציוד עליו חתום באפסנאות.<br><br>
+    על החייל להגיע עם כלל הציוד הדרוש+חוגר.<br><br>
+    יש לוודא כחודש מראש שכתובתך נכונה במערכות הצבאיות על מנת שתעודת השחרור תשלח אלייך הביתה לכתובת העדכנית.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    נהלי דלת פתוחה
+  </div>
+  <div class="content" style="display: none;">
+    כל חייל זכאי להכנס לדלת פתוחה אצל מפקד האגף/מפקד המחנה בהתאם לשעות הקבועות בלו"ז האישי של המפקד. מפקד לא יכול למנוע כניסתו של החייל ללו"ז זה.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    קיצורי שירות
+  </div>
+  <div class="content" style="display: none;">
+    ניתן להגיש מטעמי קיצור תב"ן שלילי/מטעמי לימודים/מאבטחים-ניתן להגיש לשלישות היחידה. טרם הגשת הבקשה יש לבחון זכאות.
+  </div>
+</div>
+
+  <title2>תש</title2>
+<p style="margin-bottom: 80px;">
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חייל בודד
+  </div>
+  <div class="content" style="display: none;">
+    חייל שאינו מתגורר עם משפחתו מאחת הסיבות הבאות: עולה חדש שעלה לבדו, הוריו נפטרו, הוריו בשליחות בחו"ל, הוריו היגרו מהארץ, או קיימת בעיה חריגה בקשר עימם, החייל יוכל להגיש בקשה להכרה כחייל בודד. חיילים אלו זכאים לעזרה כספית מהצבא וכן עזרה במציאת מקום מגורים. בנוסף זכאים להטבות נוספות- תווי שי, מימון טיסה, כרטיסי חיוג, חופשה בחו"ל, מארזי מזון.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    תשמ"ש הורים/נשוי
+  </div>
+  <div class="content" style="display: none;">
+    תשמ"ש נועד להבטיח קיום מינימאלי של משפחות חיילים הנזקקות לכך באמצעות תשלום חודשי קבוע למשפחת החייל. הבקשה נבחנת ע"פ עמידה בקריטריונים ובחינת אישורים כלכליים.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    סיוע כלכלי
+  </div>
+  <div class="content" style="display: none;">
+    מענקים כספיים, הלוואות, 'מארזי מזון', קרן הסיוע (מוצרי חשמל, ריהוט ותווי קניה הניתנים ע"י אל"ח) כלל בקשות הסיוע הכלכלי נבחנות ע"פ אישורים כלכליים בסמכות ק. ת"ש.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    פתרונות דיור
+  </div>
+  <div class="content" style="display: none;">
+    בית החייל/דירת אל"ח/החזר שכ"ד. ניתן לחיילים בודדים/נשואים/הלנת פרט ומרחק.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    קיצור שירות
+  </div>
+  <div class="content" style="display: none;">
+    פרט - יש להציג המלצות מפקדים ואישורים רלוונטיים לכל אחת מהבקשות, כולן מועברות לבחינה בבקו"ם.
+  </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    יציאה לחו"ל
+  </div>
+  <div class="content" style="display: none;">
+    חייל בודד יוכל לטוס בכל שלב בשירות ל-30 יום. חייל שאחד מהוריו גר בחו"ל יוכל לטוס ל-21 יום. חייל שאינו מוכר להטבות אלה יוכל לבקש אישור דרך מפקדים ושלישות היחידה.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חופשות
+  </div>
+  <div class="content" style="display: none;">
+    חייל זכאי ל-30 ימי מיוחדת בשנה קלנדרית.<br><br>
+    חופשה מיוחדת כלכלית/אישית - באם חייל מעלה מצוקה כלכלית ניתן להגיש חופשה ע"מ שיוכל לעבוד. בנסיבות סוציאליות, רפואיות או חריגות ניתן לבחון בקשת מיוחדת אישית.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חופשה מיוחדת משפחתית
+  </div>
+  <div class="content" style="display: none;">
+    חופשה ע"ח מערכת בגין פציעה/מחלה/אשפוז קרוב מדרגה ראשונה בלבד במצב בו יש צורך ממשי בהימצאות החייל בבית. סא"ל רשאי לאשר עד 28 ימים. 30 ימים נוספים באישור אל"מ.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    חופשות נוספות
+  </div>
+  <div class="content" style="display: none;">
+    אבל- עבור קרוב מדרגה ראשונה 8 ימים ע"ח מערכת. עבור סבא/סבתא 3 ימים ע"ח מערכת.<br><br>
+    שמחה משפחתית- 24 שעות ע"ח חופשה שנתית.<br><br>
+    אזכרת קרוב מדרגה ראשונה- 24 שעות ע"ח מערכת.<br><br>
+    מיוחדת לימודים- לקראת בחינות בגרות, פסיכומטרי או קבלה למוסד אקדמי. יינתנו 4 ימים לכל בחינה כאשר יומיים ע"ח ימי חופשה שנתית של החייל ויומיים ע"ח מערכת.<br><br>
+    בקשות נוספות וחריגות כגון: יעוץ משפטי, ייצוג משפטי, מחיקת עבר פלילי, פיצוי בגין אובדן ציוד אישי יש לפנות למשרד הת"ש.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    הת"ש
+  </div>
+  <div class="content" style="display: none;">
+    הקלות בתנאי שירות. ההקלות מאפשרות לינה של שניים, שלושה או חמישה לילות בבית במהלך השבוע, או לינת בית מלאה, כאשר הכול בהתאם להקלה המאושרת.<br><br>
+    בקשה זו תוגש כאשר קיים מקרה סעד וכאשר החייל הוא התומך בבית.<br><br>
+    הקלות אלה אינן ניתנות עקב בעיה כלכלית של החייל או של משפחתו.<br><br>
+    הבקשה נבחנת ע"י מפקד בדרגת אל"מ.<br><br>
+    חייל זכאי הת"ש יש לשחררו עד השעה 17:30 בכל יום ובאופן בו יגיע לביתו עד השעה 20:00.<br><br>
+    חיילים הזכאים להת"ש 1,2,3,5,99 יוכלו לבצע תעסוקה מבצעית עד 14 יום בשנת שירות ברצף או במצטבר. חיילים עם זכאות להת"ש 7 לא יבצעו תעסוקה מבצעית כלל.
+  </div>
+</div>
+
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    הע"פ (היתר עבודה פרטית)
+  </div>
+  <div class="content" style="display: none;">
+    על החייל חל איסור לעבוד בזמן שירותו הצבאי בכל עבודה אזרחית כלשהי. במידה וחייל צריך לעבוד עקב מצב כלכלי, יוכל להגיש בקשה להיתר עבודה עם אישורים כלכליים ואישור מהמעסיק שתיבחן ע"י מפקד בדרגת סא"ל. בקשה זו מאושרת למשך שנה.
+  </div>
+</div>
+
+<title2>רבנות</title2>
+<p style="margin-bottom: 80px;">
+  <title2>רפואה</title2>
+<p style="margin-bottom: 80px;">
+  <title2>נהלי אבטחה</title2>
+<p style="margin-bottom: 80px;">
+
+
+
+
+
+
+
+<!-- JavaScript to toggle content visibility -->
+<script>
+  function goBack() {
+    window.history.back();
+  }
+
+  function toggleExpansion(element) {
+    const content = element.querySelector('.content');
+    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    const arrow = element.querySelector('.arrow');
+    arrow.innerHTML = content.style.display === 'none' ? '&#9660;' : '&#9650;';
+  }
+
+</script>
+
+</body>
+</html>
