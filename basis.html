@@ -1,147 +1,180 @@
 <!DOCTYPE html>
 <html lang="he">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>על המקשאפ</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>על המקשאפ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-  <style>
-header {
-  background-color: #2196F3;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  direction: rtl;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
-}
+    <style>
+        header {
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            direction: rtl;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+        }
 
-h1 {
-  margin-left: 20px; /* Add this line for left margin */
-  flex-grow: 1; /* Add this line to make h1 take up remaining space */
-}
+        h1 {
+            margin-left: 20px;
+            flex-grow: 1;
+        }
 
-.back-arrow {
-  color: white;
-  font-size: 24px;
+        .back-arrow {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-  cursor: pointer;
-  /* order: -1; */ /* Remove this line to keep default order */
-}
-
-
-
-
-
-
-
-    body {
+        body {
             background-color: #f5f5f5;
-        font-family: 'Arial', sans-serif;
-        margin: 0; /* Add this line to remove default margin */
-        padding: 0;
-    }
-    .container {
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 4px rgba(191, 191, 191, 1.0);
-      margin: 15px 20px;
-      padding: 10px;
-    }
-.title {
-  color: #ffc107;
-  font-size: 18px;
-  font-weight: normal;
-  text-align: right;
-  display: flex;
-  justify-content: space-between; /* Add this line to align content to both ends */
-  padding-right: 10px; /* Add some right padding for better spacing */
-}
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-.arrow {
-  color: #ffc107;
-}
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 4px rgba(191, 191, 191, 1.0);
+            margin: 15px 20px;
+            padding: 10px;
+        }
 
-    .content {
-      color: #000;
-      font-size: 12px;
-      font-weight: normal;
-      text-align: right;
-      direction: rtl;
-        padding-right: 14px;
-                padding-left: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        .title {
+            color: #ffc107;
+            font-size: 18px;
+            font-weight: normal;
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 10px;
+        }
 
+        .arrow {
+            color: #ffc107;
+        }
 
-    }
-title2 {
-  font-size: 24px;
-  color: #000000;
-  text-align: center;
-  direction: rtl;
-  width: max-content;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px; /* Add this line for spacing below the title */
-  display: block; /* Ensure it's treated as a block element to apply margins */
-}
+        .content {
+            color: #000;
+            font-size: 12px;
+            font-weight: normal;
+            text-align: right;
+            direction: rtl;
+            padding-right: 14px;
+            padding-left: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
 
+        title2 {
+            font-size: 24px;
+            color: #000000;
+            text-align: center;
+            direction: rtl;
+            width: max-content;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: block;
+        }
 
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 20px;
+        }
 
-  </style>
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
+
 <body>
-<header>
-  <div class="back-arrow" onclick="goBack()">
-    &#9664; <!-- Unicode for left-pointing arrow -->
-  </div>
-  <h1 onclick="window.location.href = 'index.html';">על המקשאפ</h1>
-</header>
+    <header>
+        <div class="back-arrow" onclick="goBack()">
+            &#9664;
+        </div>
+        <h1 onclick="window.location.href = 'index.html';">על המקשאפ</h1>
+    </header>
 
-<!-- CustomSelectionWidget -->
-<title2> על הבסיס </title2>
-<p style="margin-bottom: 80px;">
-<div class="container" onclick="toggleExpansion(this)">
-  <div class="title">
-    <span class="arrow">&#9660;</span>
-    על הפיקוד
-  </div>
-  <div class="content" style="display: none;">
-    פיקוד המרכז חולש על כשליש משטחה של מדינת ישראל. האוגדות המרחביות אמונות לשמור על החוק והסדר בגזרתן ועל שגרת החיים הן של התושבים היהודים והן של התושבים הפלסטינים בגזרתן. כל אוגדה מחולקת לחטיבות מרחביות, אשר כל אחת מהן חולשת על עיר פלסטינית מרכזית ועל סביבתה. כמו כן, אמונות האוגדות גם על מספר חטיבות אורגניות הנמצאות תחת פיקודן.
-    <br>
-    פיקוד המרכז אמון על מספר רב של חטיבות אורגניות, הידועות שבהן הן: חטיבת הנח"ל, חטיבת הצנחנים, חטיבת כפיר וחטיבת עקבות הברזל. כמו כן, אחראי הפיקוד על מספר יחידות מיוחדות, כגון יחידת דובדבן, יחידת מגלן ועוד.
-    <br>
-    במלחמת השחרור היה הפיקוד אחראי על המלחמה מול ירדן, בעיקר על הדרך לירושלים ועל העיר עצמה וכן על כיבוש המשולש הקטן, לוד ורמלה. במלחמת ששת הימים היה הפיקוד אחראי על כיבוש יהודה ושומרון מירדן. החל מהאינתיפאדה הראשונה מתמקד הפיקוד בעיקר בלחימה בתשתיות הטרור הפלסטיני באזור יהודה ושומרון, ובסיכולן.
-    <br>
+    <!-- CustomSelectionWidget -->
+    <title2> על הבסיס </title2>
+    <p style="margin-bottom: 80px;">
+        <div class="container" onclick="toggleExpansion(this)">
+            <div class="title">
+                <span class="arrow">&#9660;</span>
+                על הפיקוד
+            </div>
+            <div class="content" style="display: none;">
+                פיקוד המרכז חולש על כשליש משטחה של מדינת ישראל. האוגדות המרחביות אמונות לשמור על החוק והסדר בגזרתן ועל שגרת החיים הן של התושבים היהודים והן של התושבים הפלסטינים בגזרתן. כל אוגדה מחולקת לחטיבות מרחביות, אשר כל אחת מהן חולשת על עיר פלסטינית מרכזית ועל סביבתה. כמו כן, אמונות האוגדות גם על מספר חטיבות אורגניות הנמצאות תחת פיקודן.
+                <br>
+                פיקוד המרכז אמון על מספר רב של חטיבות אורגניות, הידועות שבהן הן: חטיבת הנח"ל, חטיבת הצנחנים, חטיבת כפיר וחטיבת עקבות הברזל. כמו כן, אחראי הפיקוד על מספר יחידות מיוחדות, כגון יחידת דובדבן, יחידת מגלן ועוד.
+                <br>
+                במלחמת השחרור היה הפיקוד אחראי על המלחמה מול ירדן, בעיקר על הדרך לירושלים ועל העיר עצמה וכן על כיבוש המשולש הקטן, לוד ורמלה. במלחמת ששת הימים היה הפיקוד אחראי על כיבוש יהודה ושומרון מירדן. החל מהאינתיפאדה הראשונה מתמקד הפיקוד בעיקר בלחימה בתשתיות הטרור הפלסטיני באזור יהודה ושומרון, ובסיכולן.
+                <br>
 
-    לאחר תוכנית ההינתקות, אזור יהודה ושומרון הוא המקום היחידי בו יושבים כוחות צה"ל באופן קבוע, ופועלים בשטחים נרחבים בתוך הגזרה כל זאת, על מנת לסכל את תשתיות הטרור באזור ולהגן על תושבי ואזרחי מדינת ישראל.
-    <br>
+                לאחר תוכנית ההינתקות, אזור יהודה ושומרון הוא המקום היחידי בו יושבים כוחות צה"ל באופן קבוע, ופועלים בשטחים נרחבים בתוך הגזרה כל זאת, על מנת לסכל את תשתיות הטרור באזור ולהגן על תושבי ואזרחי מדינת ישראל.
+                <br>
 
-    מפקדת הפיקוד ממוקמת בשכונת נווה יעקב בירושלים. המפקדה נקראה בעבר "מצודת כפיר", אך כיום שמה הוא "מחנה נחמיה", על שם אלוף נחמיה תמרי, שנהרג במקום בהתרסקות מסוק בשנת 1994.
-  </div>
-</div>
+                מפקדת הפיקוד ממוקמת בשכונת נווה יעקב בירושלים. המפקדה נקראה בעבר "מצודת כפיר", אך כיום שמה הוא "מחנה נחמיה", על שם אלוף נחמיה תמרי, שנהרג במקום בהתרסקות מסוק בשנת 1994.
+            </div>
+        </div>
+    </p>
 
+    <title2> על המקשאפ </title2>
+    <p style="margin-bottom: 80px;">
+        <div class="container" onclick="toggleExpansion(this)">
+            <div class="title">
+                <span class="arrow">&#9660;</span>
+                על המקשאפ
+            </div>
+            <div class="content" style="display: none;">
+                המקשאפ הוא האחראי על התקשוב בפיקוד המרכז.
+            </div>
+        </div>
+    </p>
 
-<!-- JavaScript to toggle content visibility -->
-<script>
-  function goBack() {
-    window.history.back();
-  }
+    <!-- Photo Grid -->
+    <div class="photo-grid">
+        <?php
+        $photosDirectory = 'C:\Users\benfa\PycharmProjects\rasar\photos'; // Replace with your actual path
+        $photos = scandir($photosDirectory);
+        foreach ($photos as $photo) {
+            if ($photo !== '.' && $photo !== '..') {
+                echo '<img src="' . $photosDirectory . '/' . $photo . '" alt="Photo">';
+            }
+        }
+        ?>
+    </div>
 
-  function toggleExpansion(element) {
-    const content = element.querySelector('.content');
-    content.style.display = content.style.display === 'none' ? 'block' : 'none';
-    const arrow = element.querySelector('.arrow');
-    arrow.innerHTML = content.style.display === 'none' ? '&#9660;' : '&#9650;';
-  }
-</script>
+    <!-- JavaScript to toggle content visibility -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function toggleExpansion(element) {
+            const content = element.querySelector('.content');
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            const arrow = element.querySelector('.arrow');
+            arrow.innerHTML = content.style.display === 'none' ? '&#9660;' : '&#9650;';
+        }
+    </script>
 
 </body>
+
 </html>
