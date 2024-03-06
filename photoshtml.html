@@ -3,49 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0s and 1s Background</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: black; /* Set background color */
-        }
-
-        .binary-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(100, 1fr); /* Adjust the number of columns as needed */
-            grid-template-rows: repeat(100, 1fr); /* Adjust the number of rows as needed */
-        }
-
-        .binary-cell {
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add borders for better visibility */
-        }
-    </style>
+    <title>Google Sheets API Example</title>
 </head>
 <body>
-    <div class="binary-grid">
-        <!-- Generate grid cells dynamically using JavaScript -->
-    </div>
+    <h1>Value from Google Sheets Cell A1</h1>
+    <div id="output"></div>
 
     <script>
-        // Generate random 0s and 1s for each cell
-        const binaryGrid = document.querySelector('.binary-grid');
-        const gridSize = 100; // Adjust the grid size as needed
-
-        for (let i = 0; i < gridSize * gridSize; i++) {
-            const cell = document.createElement('div');
-            cell.classList.add('binary-cell');
-            cell.style.backgroundColor = Math.random() < 0.5 ? 'black' : 'white'; // Randomly set 0 or 1
-            binaryGrid.appendChild(cell);
+        function handleResponse(response) {
+            const value = response.values[0][0];
+            document.getElementById('output').innerHTML = `<p>Value in A1: ${value}</p>`;
         }
+
+        function fetchSheetData() {
+            const sheetId = 'YOUR_SHEET_ID';
+            const apiKey = 'YOUR_API_KEY';
+            const range = 'Sheet1!A1'; // Adjust sheet name and cell as needed
+
+            const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(handleResponse)
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Call the function when the page loads
+        window.onload = fetchSheetData;
     </script>
 </body>
 </html>

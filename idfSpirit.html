@@ -124,6 +124,7 @@ th {
 <!-- CustomSelectionWidget -->
 <title2>תורניות ניקיון מטה</title2>
 <p style="margin-bottom: 80px;">
+<script src="https://apis.google.com/js/api.js"></script>
 
   <table>
         <thead>
@@ -168,11 +169,102 @@ th {
     </table>
 
 
-  <!-- JavaScript to toggle content visibility -->
-  <script>
+<!-- JavaScript to toggle content visibility and fetch Google Sheets data -->
+<script>
   function goBack() {
     window.history.back();
   }
+
+  function loadGoogleSheetsData() {
+
+    gapi.client.sheets.spreadsheets.values.get({
+
+      spreadsheetId: '1pIBfU61DALnNKpc7qtXngmlwCbpK_1e0Y94T8zILTLs',
+      range: 'גיליון1', // Adjust the range as needed
+    }).then(function (response) {
+      const values = response.result.values;
+          const cellA1Value = values && values.length > 0 && values[0].length > 0 ? values[0][0] : '';
+              console.log('Data from cell A1:');
+
+    console.log('Data from cell A1:', cellA1Value);
+      populateTable(values);
+    });
+  }
+
+  function populateTable(data) {
+    const table = document.getElementById('google-sheets-table');
+    table.innerHTML = ''; // Clear existing table content
+
+    // Add table headers
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    const daysOfWeek = ['יום ראשון', 'יום שני', 'יום שלישי', 'יום רביעי', 'יום חמישי'];
+
+    daysOfWeek.forEach(day => {
+      const th = document.createElement('th');
+      th.textContent = day;
+      headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Add table body
+    const tbody = document.createElement('tbody');
+    data.forEach(rowData => {
+      const row = document.createElement('tr');
+      rowData.forEach(cellData => {
+        const td = document.createElement('td');
+        td.textContent = cellData;
+        row.appendChild(td);
+      });
+      tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+  }
+
+  // Load Google API client
+  function initClient() {
+
+    // Use the provided client credentials
+    const clientCredentials = {
+      type: "service_account",
+      project_id: "pikudmercaz-3d4cd",
+      private_key_id: "5ccf2c1ce3b9c04827bf076359f4a4bb46710897",
+      private_key:
+        "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDtFjP5rSxpswj9\njI6Ra1NxpPvCf/Ywq+yKSgQWbyQvjucpZh84Yhz1D9/MXH9qoC+kstbOeGzs+gNq\nhdRJ5o6WjClPI+RHB2MZMKt4JaqPs9uVbcNgJEX+fIqvk2rwEIxtSOV/TbKnaH50\nD5SHyyMtL2UhwVxID+bplaVIpsV1tmGKBJbJZyZE/Sjrootz9lFkXDUk1wVvUF8E\nxb7caw3CLWeP0X8JDq1P0ktEOjNrjzZzJJJipq9AjlHDPv1ce/sufB7reY9cF0KC\n5dUzoP+xMm7l9tZfJKxg7MBXX+isJoaCvmkYO5ZgqXIw77Hhn1wnikobKEZ+NTTT\nxCG65yVBAgMBAAECggEAanBZ5EFVW5zXr/Ee/nVHMJGnv4HwVpiQ6OLi4+mAvuMy\nr5jb8lXF91VpnZd3UrjYuuHZYzeYe2mhB/1OOeFK6ZbCYvfTn/nWiTQa/yU15i8S\nqYruOGcAj4h9QOb3jxB24wdjlRweVV8pylRGVBKkV8Bb8GQdWHLfMcYPvsa0hqv9\n9xsFb0J4Fv0SOPCIaRV4hgKDv7OYUOET4UnQWlrpXptXWZDR6KK+IoJsRx5ran4P\n7Dw6n/QwGE73GR2smA8S6u5i6WBWFUnUHCbLEl0xNlh31/xDY4Z+fV1dQhJvzJy+\nvWGfiesLt/KnFvjUDLeFA+vUKsyze5s/3H6POcTdgwKBgQD3kLEg7L7dpvl8rY6E\n1vxzjBp9NyiRGlF0uYYstIbGUGhFl/9krYwiWK3ct1hRJ2L9o9zlPQV1LA7iT/yP\n+Xb8CHSSb0rOFaeuBPQSLdoJNK35a+Y81V28V390f9ooMHvNQZTCDiZpZUw4sWin\n5XcRierHHg9/NS+zA8/ry+YXAwKBgQD1Kh2ymZaAH+CJfKk5eiklW2QO8YmLnZrl\noIpy8K2nQfqbu4f+cPXjJoE3BXPKwed5HExhX9BXZuGK1L27ybNp4as3jLmf9WbI\nzkweMD1BFSQv3cRDoMqzW8bz7Mo5YW77EQSUOBnDov/s4uVeab1D1F/XtjmyEMt1\ntjIjCpAtawKBgQD3LRZNQ1NGR2Kt4zN62pPwYiBIiPwN9HMD0gBvPkeaVcnmQl6S\njNxvpo7g4oZhcKvbhvIUR5rdZIHv3+DRd0gfV+ncExZjMSfcDcILLJCXxGs3r02P\ny5DtbYcqMEUG/3F8fFAkeLBNZwB1Ulyl1evOLR+mcxMR9W6Mk+/TBB/VNQKBgQCC\nyqQrSvragacVUhcpnb1ju5zmx/78J+miBYK3DSVnbLCY8nP7zyGuvDUFOHhsvAOU\nPf+Vlzsb1bwPh61tCI8ZtpXUPdQtvQrHqB89n7ieBvxWOPZiqd5Zz2WVbkb4U72U\nXaDWvhMopsXoB6gcNUcOb7dt6j5fe8w/kSKwRQtj3wKBgQDJyZk/hAbOI3EPjuk7\nRKmutatdNuvmUwGQjTSYwbw1OL+T6M0JltBOcOaVuZ59QZKuFOG9P+8us1KOr+37\n2AqV+HsWDDiUjZwCyD1I+60izgQ3e4V4xlKR3TgsdGCxaW+WD3KjRbuwTmlAyX9a\nUMD8QeXGXHVXkAVZ0hw+MQBmlg==\n-----END PRIVATE KEY-----\n",
+      client_email: "ben-456@pikudmercaz-3d4cd.iam.gserviceaccount.com",
+      client_id: "106391383255625883074",
+      auth_uri: "https://accounts.google.com/o/oauth2/auth",
+      token_uri: "https://oauth2.googleapis.com/token",
+      auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+      client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/ben-456%40pikudmercaz-3d4cd.iam.gserviceaccount.com",
+      universe_domain: "googleapis.com"
+
+    };
+
+    gapi.client.init({
+
+      apiKey: "YOUR_API_KEY", // Replace with your actual API key
+      clientId: "YOUR_CLIENT_ID", // Replace with your actual client ID
+      discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+      scope: "https://www.googleapis.com/auth/spreadsheets.readonly",
+
+    }).then(function () {
+      // Client is initialized, load Google Sheets data
+
+      loadGoogleSheetsData();
+    });
+  }
+
+
+  // Load Google API client on window load
+  window.onload = function () {
+
+    gapi.load('client', initClient);
+
+  };
 
   function toggleExpansion(element) {
     const content = element.querySelector('.content');
@@ -180,8 +272,8 @@ th {
     const arrow = element.querySelector('.arrow');
     arrow.innerHTML = content.style.display === 'none' ? '&#9660;' : '&#9650;';
   }
-
 </script>
+
 
 </body>
 </html>
