@@ -8,6 +8,19 @@
     <!-- Include Font Awesome stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Apply the animation to the desired elements */
+    tit4, tit, tit2 {
+        animation: fadeIn 3s ease-in-out;
+    }
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,7 +30,7 @@ body {
 background-size: cover;}
 
 header {
-    background-color: #2196F3;
+    background-color: #00c9ff;
     color: white;
     text-align: center;
     padding: 15px;
@@ -156,7 +169,7 @@ tit {
     font-weight: bold;
     text-align: center; /* Center the text horizontally */
     direction: rtl;
-    line-height: 1.5;
+    line-height: 1;
         color: #ffffff; /* Set the text color to white */
 
     margin-bottom: 20px;
@@ -166,6 +179,7 @@ tit4 {
     font-size: 40px;
     font-weight: bold;
     text-align: right; /* Center the text horizontally */
+
     direction: rtl;
     line-height: 1.5;
         color: #ffffff; /* Set the text color to white */
@@ -173,6 +187,7 @@ tit4 {
 
 }
     tit2 {
+
         font-size: 40px;
         font-weight: bold;
         text-align: center; /* Center the text horizontally */
@@ -180,69 +195,75 @@ tit4 {
         line-height: 1.5;
         margin-bottom: 20px;
         margin-top: 200px;
-            color: #2196F3; /* Set the text color to white */
+            color: #00c9ff; /* Set the text color to white */
 
 
     }
 
 .top-text {
-    padding-top: 100px;
-    padding-bottom: 200px;
-    text-align: right;
     position: absolute;
     left: 50%;
+
     transform: translate(-50%, -50%);
     width: 100%;
-    background-image: url('enviroment/neveyakov.jfif'); /* Replace 'yossi.png' with the correct path to your image file */
-    background-size: cover; /* Adjust the background size as needed */
-    background-position: center; /* Adjust the background position as needed */
+    background-image: url('enviroment/neveyakov.jfif');
+    background-size: cover;
+    background-position: center;
+
 }
 
+.top-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: -1; /* Move the pseudo-element to the background */
+}
+
+/* Your existing styles */
+.top-text {
+    padding-top: 100px;
+    padding-right: 50px;
+    padding-bottom: 200px;
+    text-align: right;
+}
 
 button2{
 
-  background-color: #e1ecf4;
-  border-radius: 3px;
-  border: 1px solid #7aa7c7;
-  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
-  box-sizing: border-box;
-  color: #39739d;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.15385;
-  margin: 0;
-  outline: none;
-  padding: 8px .8em;
-  position: relative;
+    font-weight: bold;
+
+                    cursor: pointer;
+                    outline: 0;
+                    display: inline-block;
+                    font-weight: 600;
+                    line-height: 1.5;
+                    text-align: center;
+                    background-color: transparent;
+                    border: 3px solid transparent;
+                    padding: 6px 12px;
+                    font-size: 1.5rem;
+                    border-radius: .5rem;
+                    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                    color: #ffffff;
+                    border-color: #00c9ff;
+
+        }title2 {
+  font-size: 24px;
+  color: #000000;
   text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  white-space: nowrap;
-
+  direction: rtl;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top: 300px;
+  margin-bottom: 20px; /* Add this line for spacing below the title */
+  display: block; /* Ensure it's treated as a block element to apply margins */
 }
-
-.button-8:hover,
-.button-8:focus {
-  background-color: #b3d3ea;
-  color: #2c5777;
-}
-
-.button-8:focus {
-  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
-}
-
-.button-8:active {
-  background-color: #a0c7e4;
-  box-shadow: none;
-  color: #2c5777;
-}}
-        }
     </style>
 </head>
 
@@ -266,12 +287,14 @@ button2{
 
                 <tit2>מטה מקשאפ</tit2>
 <br>
+<br>
 
-                <button2 href="#about" type="button" class="cta">לחץ כדי להמשיך</button2>
+        <button2 onclick="scrollToBottom()" type="button" class="cta">לחץ כדי להמשיך</button2>
 
     </div>
-<p style="margin-bottom: 680px;">
-
+<p style="margin-bottom: 620px;">
+<title2>מה בודקים היום?</title2>
+<p style="margin-bottom: 00px;">
 <div class="rectangle-container">
 
         <div class="custom-rectangle" onclick="window.location.href = 'idfSpirit.html'">
@@ -324,6 +347,10 @@ button2{
             // Implement your navigation logic here
             alert("Navigate to " + page);
         }
+            function scrollToBottom() {
+        // Scroll to the bottom of the page
+        document.body.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    }
     </script>
 
 </body>
