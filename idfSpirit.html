@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>רוח צהל</title>
+  <title>לוח תורניות</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
   <style>
@@ -91,9 +91,24 @@ title2 {
   margin-top: 20px;
   margin-bottom: 20px; /* Add this line for spacing below the title */
   display: block; /* Ensure it's treated as a block element to apply margins */
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    direction: rtl; /* Add this line to make the table RTL */
 }
 
+th, td {
+    border: 1px solid #dddddd;
+    text-align: center; /* Align text to the right */
+    padding: 8px;
+}
 
+th {
+    background-color: #f2f2f2;
+}
 
 
     </style>
@@ -103,84 +118,54 @@ title2 {
   <div class="back-arrow" onclick="goBack()">
     &#9664; <!-- Unicode for left-pointing arrow -->
   </div>
-  <h1 onclick="window.location.href = 'index.html';">רוח צהל</h1>
+  <h1 onclick="window.location.href = 'index.html';">לוח תורניות</h1>
 </header>
 
 <!-- CustomSelectionWidget -->
-<title2>רוח צהל</title2>
+<title2>תורניות ניקיון מטה</title2>
 <p style="margin-bottom: 80px;">
 
-<div class="container" onclick="toggleExpansion(this)">
-  <div class="title">
-    <span class="arrow">&#9660;</span>
-    ערכי היסוד
-  </div>
-  <div class="content" style="display: none;">
-    הגנת המדינה, אזרחיה ותושביה
-    <br>
-    כבוד האדם
-    <br>
-    אהבת המולדת ונאמנות למדינה
-    <br>
-    ממלכתיות
-  </div>
-</div>
-
-<div class="container" onclick="toggleExpansion(this)">
-  <div class="title">
-    <span class="arrow">&#9660;</span>
-    הערכים
-  </div>
-  <div class="content" style="display: none;">
-    דבקות במשימה וחתירה לניצחון
-    <br>
-    אחריות
-    <br>
-    אמינות
-    <br>
-    דוגמא אישית
-    <br>
-    חיי אדם
-    <br>
-    טוהר הנשק
-    <br>
-    מקצועיות
-    <br>
-    משמעת
-    <br>
-    רעות
-    <br>
-    שליחות
-  </div>
-</div>
-
-<div class="container" onclick="toggleExpansion(this)">
-  <div class="title">
-    <span class="arrow">&#9660;</span>
-    הַתִּקְוָוה / נפתלי הרץ אימבר
-  </div>
-  <div class="content" style="display: none;">
-    כָּל עוֹד בַּלֵּבָב פְניִמָה
-    <br>
-    נֶפֶשׁ יְהוּדִי הוֹמִיָה,
-    <br>
-    וּלְפַאֲתֵי מִזְרָח קָדִימָה
-    <br>
-    עַיִן לְצִיוֹן צוֹפִיָה.
-    <br><br>
-    עוֹד לא אָבְדָה תִּקְוָתֵנוּ,
-    <br>
-    הַתִּקְוָוה בַּת שְׁנוֹת אַלְפַּיִם,
-    <br>
-    לִהְיוֹת עַם חָפְשִׁי בְּאַרְצֵנוּ,
-    <br>
-    אֶרֶץ צִיּוֹן וִירוּשָלַיִם.
-  </div>
-</div>
-
-
-
-
+  <table>
+        <thead>
+            <tr>
+                <th>יום ראשון</th>
+                <th>יום שני</th>
+                <th>יום שלישי</th>
+                <th>יום רביעי</th>
+                <th>יום חמישי</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1, Cell 2</td>
+                <td>Row 1, Cell 3</td>
+                <td>Row 1, Cell 4</td>
+                <td>Row 1, Cell 5</td>
+                <td>Row 1, Cell 6</td>
+            </tr>
+            <tr>
+                <td>Row 2, Cell 2</td>
+                <td>Row 2, Cell 3</td>
+                <td>Row 2, Cell 4</td>
+                <td>Row 2, Cell 5</td>
+                <td>Row 2, Cell 6</td>
+            </tr>
+            <tr>
+                <td>Row 3, Cell 2</td>
+                <td>Row 3, Cell 3</td>
+                <td>Row 3, Cell 4</td>
+                <td>Row 3, Cell 5</td>
+                <td>Row 3, Cell 6</td>
+            </tr>
+            <tr>
+                <td>Row 4, Cell 2</td>
+                <td>Row 4, Cell 3</td>
+                <td>Row 4, Cell 4</td>
+                <td>Row 4, Cell 5</td>
+                <td>Row 4, Cell 6</td>
+            </tr>
+        </tbody>
+    </table>
 
 
   <!-- JavaScript to toggle content visibility -->
