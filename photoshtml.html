@@ -6,30 +6,73 @@
     <title>Google Sheets API Example</title>
 </head>
 <body>
-    <h1>Value from Google Sheets Cell A1</h1>
-    <div id="output"></div>
-
+    <script src="https://apis.google.com/js/api.js"></script>
     <script>
-        function handleResponse(response) {
-            const value = response.values[0][0];
-            document.getElementById('output').innerHTML = `<p>Value in A1: ${value}</p>`;
+        // Your Google Sheets API credentials and sheet ID
+        const CLIENT_ID = 'YOUR_CLIENT_ID';
+        const API_KEY = 'YOUR_API_KEY';
+        const SHEET_ID = 'YOUR_SHEET_ID';
+
+        // Array of discovery doc URLs for APIs used by the quickstart
+        const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+
+        // Authorization scopes required by the API
+        const SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+        function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
         }
 
-        function fetchSheetData() {
-            const sheetId = 'YOUR_SHEET_ID';
-            const apiKey = 'YOUR_API_KEY';
-            const range = 'Sheet1!A1'; // Adjust sheet name and cell as needed
+        function initClient() {
+            gapi.client.init({
+                apiKey: API_KEY,
+                clientId: CLIENT_ID,
+                discoveryDocs: DISCOVERY_DOCS,
+                scope: SCOPES
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-            const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
-
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(handleResponse)
-                .catch(error => console.error('Error fetching data:', error));
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            }, function (error) {
+                console.error('Error initializing Google Sheets API client: ', error);
+            });
         }
 
-        // Call the function when the page loads
-        window.onload = fetchSheetData;
+        function updateSigninStatus(isSignedIn) {
+            if (isSignedIn) {
+                // Make sure the API client is loaded and sign-in is complete before calling this method.
+                listValues();
+            } else {
+                gapi.auth2.getAuthInstance().signIn();
+            }
+        }
+
+        function listValues() {
+            gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: SHEET_ID,
+                range: 'A1',
+            }).then(function (response) {
+                var range = response.result;
+                if (range.values.length > 0) {
+                    var cellValue = range.values[0][0];
+                    console.log('A1 Cell Value:', cellValue);
+                } else {
+                    console.log('No data found.');
+                }
+            }, function (error) {
+                console.error('Error fetching values: ', error);
+            });
+        }
+
+        // Initialize the API client and make an API call when the page is loaded
+        handleClientLoad();
     </script>
 </body>
 </html>
+
+https://sheets.googleapis.com/v4/spreadsheets/AIzaSyC366TqVvt-RbCYCBmSdFEa1DtF401Ol7U/values/גיליון1!A1?key=5ccf2c1ce3b9c04827bf076359f4a4bb46710897
+        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/1pIBfU61DALnNKpc7qtXngmlwCbpK_1e0Y94T8zILTLs/values/גיליון1?key=AIzaSyC366TqVvt-RbCYCBmSdFEa1DtF401Ol7U`;
+        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/1pIBfU61DALnNKpc7qtXngmlwCbpK_1e0Y94T8zILTLs/values/גיליון1?key=AIzaSyCIEOYNwd3OVyG-oqJqOUKnTE6Snwg2HzE`;
+        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/1pIBfU61DALnNKpc7qtXngmlwCbpK_1e0Y94T8zILTLs/values/גיליון1?key=5ccf2c1ce3b9c04827bf076359f4a4bb46710897`;
