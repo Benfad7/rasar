@@ -93,7 +93,12 @@ title2 {
   display: block; /* Ensure it's treated as a block element to apply margins */
 }
 
+    .custom-image {
+        width: 300px;
+        height: 200px;
+              object-fit: contain; /* Ensures the image covers the entire container */
 
+    }
 
 
     </style>
@@ -121,12 +126,24 @@ title2 {
 <div class="container" onclick="toggleExpansion(this)">
   <div class="title">
     <span class="arrow">&#9660;</span>
-    לק
+    לק חיילות
   </div>
   <div class="content" style="display: none;">
   הלקים שמותר לחיילות
     <br>
-        <img src="laksoldier.jfif" alt="Image 3">
+<img src="laksoldier.jfif" alt="Image 3" class="custom-image">
+
+  </div>
+</div>
+<div class="container" onclick="toggleExpansion(this)">
+  <div class="title">
+    <span class="arrow">&#9660;</span>
+    לק קבע
+  </div>
+  <div class="content" style="display: none;">
+  הלקים שמותר לנשות קבע
+    <br>
+<img src="lakkeva.jfif" alt="Image 3" class="custom-image">
 
   </div>
 </div>
